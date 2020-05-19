@@ -6,5 +6,5 @@ temp/
 
 .env
 
-tmp/*
-!tmp/.gitkeep
+backend/tmp/*
+!backend/tmp/.gitkeep
