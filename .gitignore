@@ -4,6 +4,9 @@ node_modules/
 build/
 temp/
 
+# testing
+coverage/
+
 .env
 
 backend/tmp/*
