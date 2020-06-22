@@ -6,3 +6,6 @@ import './MailTemplateProvider';
 
 // Register Mail Provider
 import './MailProvider';
+
+// Register Cache Provider
+import './CacheProvider';
