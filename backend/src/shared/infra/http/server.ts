@@ -18,8 +18,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(rateLimiter);
 app.use('/files', express.static(uploadConfig.uploadsFolder));
+app.use(rateLimiter); // Must be after files so the limiter doesn't apply to /files route.
 app.use(routes);
 
 app.use(errors());
