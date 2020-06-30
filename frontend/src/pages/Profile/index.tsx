@@ -19,7 +19,7 @@ interface ProfileFormData {
   name: string;
   email: string;
   password: string;
-  old_password: string;
+  oldPassword: string;
   password_confirmation: string;
 }
 
@@ -39,14 +39,14 @@ const Profile: React.FC = () => {
           email: Yup.string()
             .email('Digite um e-mail válido')
             .required('E-mail obrigatório'),
-          old_passowrd: Yup.string(),
-          password: Yup.string().when('old_password', {
+          oldPassowrd: Yup.string(),
+          password: Yup.string().when('oldPassword', {
             is: val => !!val.length,
             then: Yup.string().required(),
             otherwise: Yup.string(),
           }),
           password_confirmation: Yup.string()
-            .when('old_password', {
+            .when('oldPassword', {
               is: val => !!val.length,
               then: Yup.string().required(),
               otherwise: Yup.string(),
@@ -62,7 +62,7 @@ const Profile: React.FC = () => {
         const {
           name,
           email,
-          old_password,
+          oldPassword,
           password,
           password_confirmation,
         } = data;
@@ -70,9 +70,9 @@ const Profile: React.FC = () => {
         const formData = {
           name,
           email,
-          ...(data.old_password
+          ...(data.oldPassword
             ? {
-                old_password,
+                oldPassword,
                 password,
                 password_confirmation,
               }
@@ -163,7 +163,7 @@ const Profile: React.FC = () => {
 
           <Input
             containerStyle={{ marginTop: 24 }}
-            name="old_password"
+            name="oldPassword"
             icon={FiLock}
             type="password"
             placeholder="Senha Atual"
